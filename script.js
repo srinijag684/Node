@@ -1,11 +1,11 @@
 console.log("running");
 
 const apiLink = 'https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=6d9968e6973545f5c00b787e59a173e4&page=1';
-const imgPath = 'https://image.tmdb.org/t/p/w1280';
-const searchApi = 'https;//api.themoviedb.org/3/search/movie?&api_key=6d9968e6973545f5c00b787e59a173e4&query=';
+const imgPath = "https://image.tmdb.org/t/p/w1280";
+const searchApi = "https://api.themoviedb.org/3/search/movie?&api_key=6d9968e6973545f5c00b787e59a173e4&query=";
 
 const main = document.getElementById('section');
-const form = document.getElementById('from');
+const form = document.getElementById('form');
 const search= document.getElementById('query');
 
 returnMovies(apiLink)
@@ -21,7 +21,7 @@ returnMovies(apiLink)
         div_row.setAttribute('class', 'row');
         
         const div_column = document.createElement('div');
-        div_column.setAttribute('class', 'column');
+        div_column.setAttribute('class', 'col');
         
         const image = document.createElement('img');
         image.setAttribute('class', 'thumbnail');
@@ -49,12 +49,12 @@ returnMovies(apiLink)
   form.addEventListener("submit", (e) => {
     e.preventDefault();
     main.innerHTML = '';
-
+  
     const searchItem = search.value;
-
-    if(searchItem){
-        returnMovies(searchApi + searchItem);
-        search.value = " ";
+  
+    if (searchItem) {
+      returnMovies(searchApi + searchItem);
+        search.value = "";
     }
 
 })
